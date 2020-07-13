@@ -26,7 +26,7 @@ end
 
 #---------------------------------------------------------------------
 def titleize(str)
-    return str.split(' ').map.with_index{|x, i| ['and', 'the'].include?(x.downcase)?(i==0?x.capitalize: x.downcase): x.capitalize}.join(" ")
+    return str.split.map.with_index{|w, i| (w.size>3||i==0)?w.capitalize: w}.join(' ')
 end
 
 
