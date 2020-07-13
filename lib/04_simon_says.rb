@@ -26,9 +26,8 @@ end
 
 #---------------------------------------------------------------------
 def titleize(str)
-    return str.split.map(&:capitalize).join(' ')
+    return str.split(' ').map.with_index{|x, i| ['and', 'the'].include?(x.downcase)?(i==0?x.capitalize: x.downcase): x.capitalize}.join(" ")
 end
 
-titleize("bonjour, comment aller vous")
 
 
